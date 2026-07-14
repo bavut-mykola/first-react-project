@@ -1,0 +1,201 @@
+@use "./variables" as *;
+
+
+#catalog {
+  width: 100%;
+  padding: 100px 60px;
+
+  background-color: $cream;
+}
+
+
+.catalog-title {
+  font-size: 3rem;
+  font-weight: 700;
+
+  margin-bottom: 40px;
+
+  color: $black;
+}
+
+/* PRODUCTS */
+
+.products-container {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+.products-track {
+  display: flex;
+
+  gap: 40px;
+
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+
+.product-box {
+  flex: 0 0 calc(50% - 20px);
+
+  color: $black;
+
+  display: flex;
+  flex-direction: column;
+
+  text-decoration: none;
+}
+
+
+/* IMAGE */
+
+.image-container {
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  overflow: hidden;
+
+  border-radius: $radius-md;
+
+  background-color: $surface;
+}
+
+
+.product-img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: $transition;
+}
+
+
+.image-container:hover .product-img {
+  transform: scale(1.05);
+}
+
+
+/* NAME + PRICE */
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 20px;
+}
+
+
+.product-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+
+/* BUTTON */
+
+.product-btn {
+  width: 100%;
+
+  margin-top: 20px;
+
+  padding: 14px 0;
+
+  border: 1px solid $black;
+
+  background-color: $cream;
+
+  color: $black;
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  transition: $transition;
+
+
+  &:hover {
+    background-color: $black;
+    color: $cream;
+  }
+}
+
+
+/* ARROWS */
+
+.arrows-box {
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 50px;
+}
+
+
+.arrow {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid $black;
+
+  border-radius: 50%;
+
+  color: $black;
+
+  background-color: $cream;
+
+  transition: $transition;
+
+
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+
+
+  &:hover {
+    background-color: $black;
+    color: $cream;
+  }
+}
+
+#top {
+  width: 100%;
+  padding: 40px 60px 100px;
+
+  background-color: $cream;
+}
+
+
+.top-section-title {
+  font-size: 3rem;
+  font-weight: 700;
+
+  color: $black;
+
+  margin-bottom: 20px;
+}
+
+
+.top-text {
+  font-size: 1.1rem;
+  color: $black;
+
+  margin-bottom: 50px;
+}
+
+.product-rating {
+  font-size: 18px;
+}

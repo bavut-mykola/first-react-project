@@ -1,0 +1,376 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 15 Pro",
+    "price": 37000,
+    "category": "phones",
+    "quantity": 78,
+    "rating": 8.2,
+    "description": "Flagship Apple smartphone with A17 Pro chip, titanium body and advanced camera system.",
+    "ratings": {
+      "stepan@gmail.com": {
+        "userName": "stepan",
+        "rating": 10,
+        "text": "shit",
+        "createdAt": "2026-07-14T13:00:37.657Z"
+      },
+      "igor228@gmail.com": {
+        "userName": "Igor",
+        "rating": 10,
+        "text": "ponos nahui",
+        "createdAt": "2026-07-14T13:05:11.715Z"
+      },
+      "kolya@gmail.com": {
+        "userName": "Kolya",
+        "rating": 1,
+        "text": "fuck owners of that",
+        "createdAt": "2026-07-03T15:05:52.177Z"
+      },
+      "max@gmail.com": {
+        "userName": "Max",
+        "rating": 10,
+        "text": "very shit",
+        "createdAt": "2026-07-14T13:02:02.397Z"
+      },
+      "ebanat@gmail.com": {
+        "userName": "Daun",
+        "rating": 10,
+        "text": "rot nahui ebal pidoras",
+        "createdAt": "2026-07-14T13:03:48.238Z"
+      }
+    },
+    "img": "/images/iphone_15_pro.png"
+  },
+  {
+    "id": 2,
+    "name": "iPhone 15",
+    "price": 32000,
+    "category": "phones",
+    "quantity": 120,
+    "rating": 6,
+    "description": "Standard iPhone model with powerful performance and great camera for everyday use.",
+    "ratings": {
+      "kolya@gmail.com": {
+        "userName": "Kolya",
+        "rating": 9,
+        "text": "fuckin good shit",
+        "createdAt": "2026-07-03T15:05:14.960Z"
+      },
+      "stepan@gmail.com": {
+        "userName": "stepan",
+        "rating": 3,
+        "text": "sucks",
+        "createdAt": "2026-07-03T15:06:40.206Z"
+      }
+    },
+    "img": "/images/iphone_15.png"
+  },
+  {
+    "id": 3,
+    "name": "iPhone 14",
+    "price": 27000,
+    "category": "phones",
+    "quantity": 95,
+    "rating": 6.3,
+    "description": "Previous generation iPhone with solid performance and reliable camera system.",
+    "ratings": {},
+    "img": "/images/iphone_14.png"
+  },
+  {
+    "id": 4,
+    "name": "Samsung Galaxy S24",
+    "price": 35000,
+    "category": "phones",
+    "quantity": 60,
+    "rating": 8.1,
+    "description": "Samsung flagship with AI features, high refresh display and strong performance.",
+    "ratings": {},
+    "img": "/images/samsung_s24.png"
+  },
+  {
+    "id": 5,
+    "name": "Xiaomi 14",
+    "price": 28000,
+    "category": "phones",
+    "quantity": 110,
+    "rating": 5.4,
+    "description": "High-performance Android phone with great camera and fast charging.",
+    "ratings": {},
+    "img": "/images/xiaomi_14.png"
+  },
+  {
+    "id": 6,
+    "name": "MacBook Air M2",
+    "price": 52000,
+    "category": "laptops",
+    "quantity": 25,
+    "rating": 7.7,
+    "description": "Lightweight Apple laptop with M2 chip, perfect for study and development.",
+    "ratings": {},
+    "img": "/images/air_m2.png"
+  },
+  {
+    "id": 7,
+    "name": "MacBook Pro 14",
+    "price": 89000,
+    "category": "laptops",
+    "quantity": 12,
+    "rating": 8.5,
+    "description": "Powerful laptop for professionals with M3 chip and Liquid Retina XDR display.",
+    "ratings": {},
+    "img": "/images/pro_14.png"
+  },
+  {
+    "id": 8,
+    "name": "Dell XPS 15",
+    "price": 65000,
+    "category": "laptops",
+    "quantity": 18,
+    "rating": 4.9,
+    "description": "Premium Windows laptop with high-quality display and strong performance.",
+    "ratings": {},
+    "img": "/images/dell_xps_15.png"
+  },
+  {
+    "id": 9,
+    "name": "Lenovo Legion 5",
+    "price": 60000,
+    "category": "laptops",
+    "quantity": 22,
+    "rating": 2.4,
+    "description": "Gaming laptop with powerful GPU and high refresh rate display.",
+    "ratings": {},
+    "img": "/images/legion_5.png"
+  },
+  {
+    "id": 10,
+    "name": "Asus ZenBook 14",
+    "price": 48000,
+    "category": "laptops",
+    "quantity": 30,
+    "rating": 4.1,
+    "description": "Thin and light ultrabook for productivity and travel.",
+    "ratings": {},
+    "img": "/images/asus_zenbook_14.png"
+  },
+  {
+    "id": 11,
+    "name": "AirPods Pro 2",
+    "price": 4300,
+    "category": "gadgets",
+    "quantity": 213,
+    "rating": 9.7,
+    "description": "Wireless earbuds with active noise cancellation and spatial audio.",
+    "ratings": {},
+    "img": "/images/airPods_pro_2.png"
+  },
+  {
+    "id": 12,
+    "name": "Apple Watch Series 9",
+    "price": 15000,
+    "category": "gadgets",
+    "quantity": 55,
+    "rating": 1.3,
+    "description": "Smartwatch with health tracking, fitness features and seamless iPhone integration.",
+    "ratings": {},
+    "img": "/images/apple_watch_series_9.png"
+  },
+  {
+    "id": 13,
+    "name": "Samsung Galaxy Watch 6",
+    "price": 12000,
+    "category": "gadgets",
+    "quantity": 40,
+    "rating": 3.7,
+    "description": "Android smartwatch with advanced health monitoring and sleek design.",
+    "ratings": {},
+    "img": "/images/galaxy_watch_6.png"
+  },
+  {
+    "id": 14,
+    "name": "Sony WH-1000XM5",
+    "price": 11000,
+    "category": "gadgets",
+    "quantity": 35,
+    "rating": 0.8,
+    "description": "Premium noise-cancelling headphones with top-tier sound quality.",
+    "ratings": {},
+    "img": "/images/sonny_wh_1000xm5.png"
+  },
+  {
+    "id": 15,
+    "name": "GoPro Hero 12",
+    "price": 18000,
+    "category": "gadgets",
+    "quantity": 20,
+    "rating": 4.8,
+    "description": "Action camera for extreme sports and high-quality video recording.",
+    "ratings": {},
+    "img": "/images/go_pro_hero_12.png"
+  },
+  {
+    "id": 16,
+    "name": "iPad Air",
+    "price": 24000,
+    "category": "tablets",
+    "quantity": 60,
+    "rating": 2.5,
+    "description": "Powerful tablet for work, study and entertainment with Apple Pencil support.",
+    "ratings": {},
+    "img": "/images/ipad_air.png"
+  },
+  {
+    "id": 17,
+    "name": "iPad Pro",
+    "price": 42000,
+    "category": "tablets",
+    "quantity": 30,
+    "rating": 4.2,
+    "description": "High-end tablet with M2 chip for professional creative work.",
+    "ratings": {},
+    "img": "/images/ipad_pro.jpg"
+  },
+  {
+    "id": 18,
+    "name": "Samsung Galaxy Tab S9",
+    "price": 28000,
+    "category": "tablets",
+    "quantity": 25,
+    "rating": 3.5,
+    "description": "Android tablet with AMOLED display and strong performance.",
+    "ratings": {},
+    "img": "/images/galaxy_tab_s9.jpg"
+  },
+  {
+    "id": 19,
+    "name": "Logitech MX Master 3S",
+    "price": 3500,
+    "category": "accessories",
+    "quantity": 150,
+    "rating": 7.6,
+    "description": "Premium wireless mouse for productivity and coding.",
+    "ratings": {},
+    "img": "/images/logitech_mx_master_3s.jpg"
+  },
+  {
+    "id": 20,
+    "name": "Keychron K8 Keyboard",
+    "price": 4000,
+    "category": "accessories",
+    "quantity": 90,
+    "rating": 7.1,
+    "description": "Mechanical keyboard ideal for developers and gamers.",
+    "ratings": {},
+    "img": "/images/keychron_k8.png"
+  },
+  {
+    "id": 21,
+    "name": "Razer DeathAdder V3",
+    "price": 2800,
+    "category": "accessories",
+    "quantity": 110,
+    "rating": 4,
+    "description": "Ergonomic gaming mouse with high precision sensor.",
+    "ratings": {},
+    "img": "/images/razer_v3.png"
+  },
+  {
+    "id": 22,
+    "name": "PlayStation 5",
+    "price": 25000,
+    "category": "gaming",
+    "quantity": 15,
+    "rating": 9.7,
+    "description": "Next-gen gaming console with ultra-fast SSD and exclusive games.",
+    "ratings": {},
+    "img": "/images/play_station_5.png"
+  },
+  {
+    "id": 23,
+    "name": "Xbox Series X",
+    "price": 24000,
+    "category": "gaming",
+    "quantity": 18,
+    "rating": 8.4,
+    "description": "Powerful Microsoft gaming console with 4K gaming support.",
+    "ratings": {},
+    "img": "/images/xbox_series_x.png"
+  },
+  {
+    "id": 24,
+    "name": "Nintendo Switch OLED",
+    "price": 16000,
+    "category": "gaming",
+    "quantity": 40,
+    "rating": 4.9,
+    "description": "Portable gaming console with vibrant OLED display.",
+    "ratings": {},
+    "img": "/images/nintendo_switch.png"
+  },
+  {
+    "id": 25,
+    "name": "Anker PowerBank 20000mAh",
+    "price": 2500,
+    "category": "accessories",
+    "quantity": 200,
+    "rating": 3,
+    "description": "Fast-charging portable battery for phones and gadgets.",
+    "ratings": {},
+    "img": "/images/anker_power_bank.png"
+  },
+  {
+    "id": 26,
+    "name": "USB-C Hub 7-in-1",
+    "price": 1800,
+    "category": "accessories",
+    "quantity": 140,
+    "rating": 6.8,
+    "description": "Multiport adapter for laptops with HDMI and USB support.",
+    "ratings": {},
+    "img": "/images/ucb_c_hub_7_in_1.png"
+  },
+  {
+    "id": 27,
+    "name": "Canon EOS R10",
+    "price": 35000,
+    "category": "cameras",
+    "quantity": 10,
+    "rating": 7,
+    "description": "Mirrorless camera for high-quality photography and video.",
+    "ratings": {},
+    "img": "/images/canon_eos_r10.png"
+  },
+  {
+    "id": 28,
+    "name": "Sony A7 III",
+    "price": 55000,
+    "category": "cameras",
+    "quantity": 8,
+    "rating": 4.7,
+    "description": "Full-frame camera for professional photographers.",
+    "ratings": {},
+    "img": "/images/sony_a7.png"
+  },
+  {
+    "id": 29,
+    "name": "DJI Mini 4 Pro",
+    "price": 32000,
+    "category": "drones",
+    "quantity": 12,
+    "rating": 5.6,
+    "description": "Compact drone with 4K camera and advanced flight features.",
+    "ratings": {},
+    "img": "/images/dji_mini_4pro.png"
+  },
+  {
+    "id": 30,
+    "name": "DJI Air 3",
+    "price": 45000,
+    "category": "drones",
+    "quantity": 9,
+    "rating": 2.8,
+    "description": "Advanced drone with dual camera system and long flight time.",
+    "ratings": {},
+    "img": "/images/dji_air_3.png"
+  }
+]

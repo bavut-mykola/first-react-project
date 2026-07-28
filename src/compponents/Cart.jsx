@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import '../styles/cart.scss'
 
 function Cart({ cart, removeFromCart, clearCart, addToCart, decreaseCount }) {
     const navigation = useNavigate()
@@ -21,10 +22,12 @@ function Cart({ cart, removeFromCart, clearCart, addToCart, decreaseCount }) {
                 {cart.map(p => (
                     <div key={p.id} className="cart-item">
                         <div className="cart-item-details">
-                            <h2 className="cart-item-title">{p.name}</h2>
-                            <img src={p.img} alt={p.name} width="400" height="200"/>
-                            <p className="cart-item-quantity">Quantity: {p.count}</p>
-                            <p className="cart-item-total">Total: {p.price * p.count} UAH</p>
+                            <img className="cart-item-img" src={p.img} alt={p.name} />
+                            <div className="name-quant-total-box">
+                                <h2 className="cart-item-title">{p.name}</h2>
+                                <p className="cart-item-quantity">Quantity: {p.count}</p>
+                                <p className="cart-item-total">Total: {p.price * p.count} UAH</p>
+                            </div>
                         </div>
     
                         <div className="cart-item-actions">

@@ -109,7 +109,7 @@ function App() {
     return (
         <>   
         <h2>{loading && 'Loading products...'}</h2>
-        <Navbar user={user} onLogout={logoutUser} cart={cart} />
+        <Navbar user={user} onLogout={logoutUser} cart={cart} products={products} addToCart={addToCart} />
         <Routes>
             <Route path='/' element={
                 <>

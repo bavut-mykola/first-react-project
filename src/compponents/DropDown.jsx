@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "../styles/dropDown.scss";
 
 function DropDown({ user, onLogout, onClose }) {
     const [isHistoryOpened, setIsHistoryOpened] = useState(false)

@@ -1,6 +1,6 @@
 @use "./variables" as *;
 
-
+.products-page-container {
 #catalog {
   width: 100%;
   padding: 100px 60px;
@@ -200,4 +200,10 @@
     background-color: $black;
     color: $cream;
   }
+}
+
+.products-top {
+  display: flex;
+  justify-content: space-between;
+}
 }

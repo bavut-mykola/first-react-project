@@ -186,6 +186,8 @@
   color: $black;
 
   margin-bottom: 20px;
+
+  width: fit-content;
 }
 
 
@@ -194,6 +196,16 @@
   color: $black;
 
   margin-bottom: 50px;
+
+  width: fit-content;
+  margin-right: 25px;
+}
+
+.top-products-texts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .product-rating {

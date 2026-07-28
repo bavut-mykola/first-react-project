@@ -41,20 +41,22 @@ function Products({ addToCart, products }) {
     }
 
     return (
-        <section id="catalog">
-            <h2 className="catalog-title">Our Products</h2>
+        <section id="catalog" className="products-page-container">
+            <div className="products-top">
+                <h2 className="catalog-title">Our Products</h2>
 
-            <div className="filter-box">
-                <label htmlFor="category-select">Filter by Category: </label>
-                <select
-                    id="category-select"
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                >
-                    {CATEGORIES.map(c => (
-                        <option key={c.value} value={c.value}>{c.label}</option>
-                    ))}
-                </select>
+                <div className="filter-box">
+                    <label htmlFor="category-select">Filter by Category: </label>
+                    <select
+                        id="category-select"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                    >
+                        {CATEGORIES.map(c => (
+                            <option key={c.value} value={c.value}>{c.label}</option>
+                        ))}
+                    </select>
+                </div>
             </div>
 
             <div className="products-container">

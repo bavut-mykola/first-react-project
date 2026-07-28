@@ -28,12 +28,14 @@ function TopProducts({ addToCart, products }) {
     
     return (
         <section id="top">
+            <div className="top-products-texts">
             <h2 className="top-section-title">
                 Top Products
             </h2>
             <p className="top-text">
                 Products with the higher rating
             </p>
+            </div>
             <div className="products-container">
                 <div className="products-track"
                 style={{ transform: `translateX(calc(-${currentIndex} * (50% + 20px)))` }}

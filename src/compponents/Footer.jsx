@@ -2,6 +2,13 @@ import "../styles/footer.scss"
 
 function Footer() {
     return (
+        <>
+        <div className="disclaimer-nav-box">
+                <h3 className="disclaimer-title">
+                    ⚠️ Demo Store — For educational purposes only. No real purchases or payments are processed.
+                </h3>
+        </div>
+
         <footer className="footer">
             <div className="footer-logo">
                 <h3>ELIX</h3>
@@ -15,6 +22,7 @@ function Footer() {
                 <p>Customer support: 034 687 91 67</p>
             </div>
         </footer>
+        </>
     )
 }
 

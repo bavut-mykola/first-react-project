@@ -1,1 +1,197 @@
 @use "./variables" as *;
+
+.dropdown-overlay {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 9999999;
+    animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown-menu {
+    position: fixed;
+    width: 50vw;
+    height: 40vh;
+    background-color: $cream;
+    z-index: 100000000;
+    left: 50%;
+    top: 15vh;
+    transform: translateX(-50%);
+    border-radius: $radius-lg;
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(10, 10, 10, 0.08);
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    box-sizing: border-box;
+    font-family: inherit;
+    color: $black;
+    overflow: hidden;
+    animation: appleModalPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dropdown-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-right: 40px;
+}
+
+.dropdown-name {
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: $black;
+    margin: 0;
+}
+
+.dropdown-email {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba($black, 0.55);
+    margin: 0;
+}
+
+.dropdown-empty {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba($black, 0.55);
+    margin: 0;
+}
+
+.dropdown-menu hr {
+    border: none;
+    height: 1px;
+    background-color: rgba($black, 0.08);
+    margin: 24px 0;
+    width: 100%;
+}
+
+.dropdown-btn {
+    background-color: $cream;
+    color: $black;
+    border: 1px solid $black;
+    padding: 16px 20px;
+    border-radius: $radius-md;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color $transition, color $transition, border-color $transition, transform 0.1s ease;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+        background-color: $black;
+        color: $cream;
+        border-color: $black;
+
+        svg {
+            stroke: $cream;
+        }
+    }
+
+    &:active {
+        transform: scale(0.99);
+    }
+
+    &.logout {
+        background-color: $black;
+        color: $cream;
+        border: 1px solid $cream;
+        transition: background-color $transition, color $transition, border-color $transition, transform 0.1s ease;
+
+        &:hover {
+            background-color: $cream;
+            color: $black;
+            border-color: $black;
+        }
+    }
+
+    &.close {
+        position: absolute;
+        top: 28px;
+        right: 28px;
+        background: $cream;
+        border: 1px solid $black;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background-color $transition, color $transition, border-color $transition;
+
+        svg {
+            stroke: $black;
+            width: 16px;
+            height: 16px;
+            transition: stroke $transition;
+        }
+
+        &:hover {
+            background-color: $black;
+            color: $cream;
+            border-color: $black;
+
+            svg {
+                stroke: $cream;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes appleModalPop {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.95) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1) translateY(0);
+    }
+}
+
+@media (max-width: 320px) {
+    .dropdown-menu {
+        width: 92vw !important;
+        height: 40vh !important;
+        padding: 20px 14px !important;
+        top: 8vh !important;
+    }
+
+    .dropdown-user-info {
+        padding-right: 32px;
+    }
+
+    .dropdown-name {
+        font-size: 17px;
+    }
+
+    .dropdown-btn.close {
+        top: 16px;
+        right: 16px;
+        width: 28px;
+        height: 28px;
+
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}

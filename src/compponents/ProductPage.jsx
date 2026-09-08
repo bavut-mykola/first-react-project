@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams, useNavigate } from "react-router-dom"
+import "../styles/productPage.scss";
 
 function ProductPage({ addToCart, user }) {
     const navigation = useNavigate()
@@ -124,7 +125,7 @@ function ProductPage({ addToCart, user }) {
     <main className="product-layout">
       <header className="product-header">
         <img src={product.img} alt={product.name} width="700" height="400"/>
-        <h1>{product.name}</h1>
+        <h3 className="product-name">{product.name}</h3>
         <p className="category">Category: <strong>{product.category}</strong></p>
       </header>
 
@@ -139,8 +140,8 @@ function ProductPage({ addToCart, user }) {
         </div>
 
         <div className="price-info">
-          <p>Price: <strong>{product.price} UAH</strong></p>
-          <p>Quantity available: {product.quantity}</p>
+          <p>Price: <strong className="price-strong-text">{product.price} UAH</strong></p>
+          <p className="product-quantity"><span>Quantity available:</span> {product.quantity}</p>
         </div>
       </section>
 

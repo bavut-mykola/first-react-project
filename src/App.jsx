@@ -37,6 +37,10 @@ function App() {
         }
     }
 
+    function getCartKey(currentUser) {
+        return currentUser ? `cart_${currentUser.email}` : 'cart_guest';
+    }
+
     useEffect(() => {
         loadProducts()
     }, [])
@@ -44,8 +48,18 @@ function App() {
     console.log(products);
 
     function loginUser(userData) {
-        setUser(userData)
-        localStorage.setItem('user', JSON.stringify(userData))
+        setUser(userData);
+        localStorage.setItem('user', JSON.stringify(userData));
+        
+        const key = getCartKey(userData);
+        const userCart = JSON.parse(localStorage.getItem(key)) || [];
+        setCart(userCart);
+    }
+
+    function logoutUser() {
+        setUser(null);
+        localStorage.removeItem('user');
+        setCart([]); 
     }
 
     useEffect(() => {
@@ -56,14 +70,12 @@ function App() {
         }
     }, [])
 
-    function logoutUser() {
-        setUser(null)
-        localStorage.removeItem('user')
-    }
-
-    const [cart, setCart] = useState(
-        JSON.parse(localStorage.getItem('cart')) || []
-    )
+    const [cart, setCart] = useState(() => {
+        const savedUser = localStorage.getItem('user');
+        const parsedUser = savedUser ? JSON.parse(savedUser) : null;
+        const key = getCartKey(parsedUser);
+        return JSON.parse(localStorage.getItem(key)) || [];
+    });
 
     function addToCart(product) {
         const added = cart.find(item => item.id === product.id)
@@ -97,8 +109,9 @@ function App() {
     }
 
     useEffect(() => {
-        localStorage.setItem('cart', JSON.stringify(cart))
-    }, [cart])
+        const key = getCartKey(user);
+        localStorage.setItem(key, JSON.stringify(cart));
+    }, [cart, user]);
 
     const productsSectionRef = useRef(null)
 

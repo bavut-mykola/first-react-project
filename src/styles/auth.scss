@@ -1,0 +1,225 @@
+@use "./variables" as *;
+
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: $background;
+    color: $text;
+    padding: 40px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+
+    hr {
+        width: 100%;
+        max-width: 420px;
+        border: none;
+        height: 1px;
+        background-color: $border;
+        margin: 32px 0;
+    }
+}
+
+.auth-form {
+    background-color: $surface;
+    border: 1px solid $border;
+    border-radius: $radius-lg;
+    padding: 48px 40px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: $shadow-md;
+    transition: transform $transition;
+
+    h2 {
+        font-size: 28px;
+        font-weight: 600;
+        letter-spacing: -0.5px;
+        color: $text;
+        margin-bottom: 32px;
+        text-align: left;
+    }
+
+    .form-group {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+
+        label {
+            font-size: 13px;
+            font-weight: 500;
+            color: rgba($text, 0.7);
+            margin-bottom: 8px;
+            letter-spacing: -0.2px;
+        }
+
+        input {
+            background-color: $background;
+            border: 1px solid $border;
+            border-radius: $radius-sm;
+            padding: 14px 16px;
+            font-size: 15px;
+            color: $text;
+            outline: none;
+            transition: all $transition;
+
+            &::placeholder {
+                color: rgba($text, 0.35);
+            }
+
+            &:focus {
+                border-color: $text;
+                background-color: #FFFFFF;
+                box-shadow: 0 0 0 3px rgba($text, 0.08);
+            }
+        }
+
+        .hint-text {
+            font-size: 12px;
+            color: rgba($text, 0.5);
+            margin-top: 6px;
+        }
+
+        .error-text {
+            color: $text !important;
+            font-weight: 500;
+            background-color: rgba(255, 0, 0, 0.06);
+            border-left: 2px solid $text;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+    }
+
+    .auth-btn {
+        width: 100%;
+        background-color: $text;
+        color: $background;
+        border: none;
+        border-radius: $radius-sm;
+        padding: 14px 16px;
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: opacity $transition, transform $transition;
+        margin-top: 8px;
+        letter-spacing: -0.2px;
+
+        &:hover {
+            opacity: 0.88;
+        }
+
+        &:active {
+            transform: scale(0.99);
+        }
+    }
+
+    .auth-toggle-text {
+        text-align: center;
+        font-size: 14px;
+        color: rgba($text, 0.6);
+        margin-top: 28px;
+
+        span {
+            color: $text;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+
+            &:hover {
+                color: rgba($text, 0.8);
+            }
+        }
+    }
+}
+
+// Global/Fallback styling for additional buttons outside the form (like Back to Home)
+.auth-container > button {
+    background: transparent;
+    border: none;
+    color: rgba($text, 0.7);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 24px;
+    padding: 8px 16px;
+    border-radius: $radius-sm;
+    transition: all $transition;
+
+    &:hover {
+        color: $text;
+        background-color: $surface-hover;
+    }
+}
+
+// Styling for EyeButton component if it renders inside the form group
+.form-group {
+    button {
+        position: absolute;
+        right: 14px;
+        top: 42px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: rgba($text, 0.5);
+        font-size: 13px;
+        padding: 4px;
+
+        &:hover {
+            color: $text;
+        }
+    }
+}
+
+.disclaimer-auth-text {
+    font-weight: 300;
+    margin-top: 15px;
+}
+.disclaimer-auth-text span {
+    font-weight: 400;
+    padding: 0 5px;
+    color: #690808;
+}
+
+.sign-up-top-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-bottom: 30px;
+
+    h2 {
+        margin: 0; 
+    }
+}
+
+.scroll-down-sign-up-btn {
+    background-color: $cream;
+    color: $black;
+    border: 1px solid $black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $black;
+        color: $cream;
+        border-color: $cream;
+    }
+}
+
+@media (max-width: 320px) {
+    input::placeholder {
+        color: transparent !important;
+    }
+    .auth-form .form-group input {
+        font-size: 12px !important;
+    }
+}

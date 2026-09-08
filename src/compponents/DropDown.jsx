@@ -8,9 +8,11 @@ function DropDown({ user, onLogout, onClose }) {
 
     const userOrders = ordersHistory.filter(order => order.email === user.email)
     
-
+console.log(user);
     return (
         <div className="dropdown">
+
+            <div className="dropdown-overlay" onClick={onClose} />
     {user ? (
         <div className="dropdown-menu">
 
@@ -25,11 +27,6 @@ function DropDown({ user, onLogout, onClose }) {
             </div>
 
             <hr />
-
-            <button className="dropdown-btn"
-            onClick={() => setIsHistoryOpened(true)}>
-                Purchase history
-            </button>
 
             <button className="dropdown-btn logout"
             onClick={() => {
@@ -56,34 +53,6 @@ function DropDown({ user, onLogout, onClose }) {
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                 </svg>
             </button>
-
-            {isHistoryOpened && (
-            <div className="purchase-history-box">
-                <h2>Your purchases history</h2>
-                {userOrders.map(o => 
-                    <div key={o.id}>
-                        <h2>Order ID: {o.orderId}</h2>
-                        <div>
-                            <h2>All products:</h2>
-                            {o.products.map(p => 
-                            <div key={p.id}>
-                                <h2>{p.productName}</h2>
-                                <img src={p.productImage} alt={p.productName} width="80" height="30" />
-                                <p>Price: {p.productPrice}UAH</p>
-                                <p>Amount: {p.productCount}</p>
-                            </div>
-                            )}
-                        </div>
-                        <p>Delivery Method: {o.delivery}</p>
-                        <p>Payment: {o.payment}</p>
-                        <p>Total price: {o.totalPrice}UAH</p>
-                    </div>
-                )}
-                <button onClick={() => setIsHistoryOpened(false)}>
-                    Close history
-                </button>
-            </div>
-            )}
         </div>
     ) : (
         <div className="dropdown-menu">
@@ -96,6 +65,7 @@ function DropDown({ user, onLogout, onClose }) {
     )}
 
 </div>
+
     )
 }
 

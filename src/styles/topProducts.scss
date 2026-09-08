@@ -211,3 +211,43 @@
 .product-rating {
   font-size: 18px;
 }
+
+@media (max-width: 320px) {
+  #top {
+    padding: 40px 16px;
+  }
+
+  .products-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 25px;
+  }
+
+  #catalog {
+    padding: 40px 16px !important;
+  }
+
+  .products-container {
+    padding-bottom: 15px !important;
+  }
+
+  .product-box {
+      flex: 0 0 100% !important;
+      width: 100% !important;
+      height: auto;
+  }
+
+  .product-info {
+      align-items: flex-start !important; 
+  }
+
+  .product-btn {
+    margin-top: 10px !important;
+    flex-shrink: 0 !important; 
+  }
+
+  .arrows-box {
+    margin-top: 15px !important;
+  }
+}

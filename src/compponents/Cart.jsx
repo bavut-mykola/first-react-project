@@ -31,8 +31,10 @@ function Cart({ cart, removeFromCart, clearCart, addToCart, decreaseCount }) {
                         </div>
     
                         <div className="cart-item-actions">
-                            <button className="btn-quantity btn-increase" onClick={() => addToCart(p)}>+</button>
-                            <button className="btn-quantity btn-decrease" onClick={() => decreaseCount(p)}>-</button>
+                            <div className="quantity-btns-box">
+                                <button className="btn-quantity btn-increase" onClick={() => addToCart(p)}>+</button>
+                                <button className="btn-quantity btn-decrease" onClick={() => decreaseCount(p)}>-</button>
+                            </div>
                             <button className="btn-remove" onClick={() => removeFromCart(p)}>Remove from Cart</button>
                         </div>
                     </div>

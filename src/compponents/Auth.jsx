@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useRef } from "react"
+import "../styles/auth.scss";
 
 function Auth({ onLogin }) {
     const navigation = useNavigate()
@@ -27,9 +28,11 @@ function Auth({ onLogin }) {
 
     const EyeButton = ({ show, toggle }) => (
         <button type="button" onClick={toggle}>
-            {show ? <EyeClosed />: <EyeOpen />}
+            {show ? <EyeOpen /> : <EyeClosed /> }
         </button>
     )
+
+    const createButtonRef = useRef()
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -161,7 +164,19 @@ function Auth({ onLogin }) {
             </form> 
             ) : (
             <form className="auth-form" onSubmit={handleSubmit}>
-                <h2>Sign Up</h2>
+                <div className="sign-up-top-box">
+                    <h2>Sign Up</h2>
+
+                    <button className="scroll-down-sign-up-btn"
+                    onClick={(e) => {
+                        e.preventDefault()
+                        createButtonRef.current.scrollIntoView({ behavior: 'smooth' })
+                    }} >
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
 
                 <div className="form-group">
                     <label>Name</label>
@@ -208,13 +223,18 @@ function Auth({ onLogin }) {
                     {error && <p className="error-text" style={{color: 'red', fontSize: '14px', marginTop: '5px'}}>{error}</p>}
                 </div>
 
-                <button type="submit" className="auth-btn">Create Account</button>
+                <button ref={createButtonRef} type="submit" className="auth-btn">Create Account</button>
         
                 <p className="auth-toggle-text">
                     Already have an account? <span style={{cursor: 'pointer'}} onClick={() => { setIsLogin(true); setError(''); }}>Log In</span>
                 </p>
             </form>
             )}
+
+            <h2 className="disclaimer-auth-text">
+                Use a <span>fake</span> email and password for this demo
+            </h2>
+
             <button onClick={() => navigation('/')}>Back to Home</button>
             <hr />
             </div>

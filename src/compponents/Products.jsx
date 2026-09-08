@@ -25,7 +25,9 @@ function Products({ addToCart, products }) {
     }, [category, products]);
 
     function scrollRight() {
-        if (currentIndex === 28) {
+        const maxIndex = Math.floor((filteredProducts.length - 1) / 2) * 2;
+
+        if (currentIndex >= maxIndex) {
             setCurrentIndex(0)
         } else {
             setCurrentIndex(currentIndex + 2)
@@ -33,8 +35,10 @@ function Products({ addToCart, products }) {
     }
 
     function scrollLeft() {
+        const maxIndex = Math.floor((filteredProducts.length - 1) / 2) * 2;
+
         if (currentIndex === 0) {
-            setCurrentIndex(28)
+            setCurrentIndex(maxIndex)
         } else {
             setCurrentIndex(currentIndex - 2)
         }

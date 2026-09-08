@@ -20,6 +20,8 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
 
     const [isSearched, setIsSearched] = useState(false)
 
+    const [isBurgerClicked, setIsBurgerClicked] = useState(false) 
+
     const inputRef = useRef(null)
 
     const inputWrapperRef = useRef(null)
@@ -74,7 +76,12 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
 
     const [currentIndex, setCurrentIndex] = useState(0)
 
-    const maxIndex = Math.max(0, filteredProducts.length - 3);
+    const isMobile = window.innerWidth <= 720;
+
+    const maxIndex = Math.max(
+        0,
+        filteredProducts.length - (isMobile ? 1 : 3)
+    );
 
     function scrollRight() {
         if (currentIndex === maxIndex) {
@@ -92,6 +99,10 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
         }
     }
 
+    useEffect(() => {
+        setIsBurgerClicked(false)
+    }, [location.pathname])
+
     return (
         <>
         <header className="header">
@@ -102,15 +113,19 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
             </div>
 
             {location.pathname === '/' && (
-                <nav className="navigation">
+                <nav className={
+                    `navigation ${isBurgerClicked ? 'opened' : ''} `
+                }>
                     <a href="#home" className="nav-link">home</a>
                     <a href="#catalog" className="nav-link">catalog</a>
                     <a href="#top" className="nav-link">top</a>
                 </nav>
             )}
 
-            <div className="main-buttons-box">
-                {!isHidden && (
+            <div className={
+                `main-buttons-box ${isBurgerClicked ? 'opened' : ''}`
+            }>
+                {!isHidden && location.pathname === '/' && (
                     <button className="search-open-btn"
                     ref={inputButtonRef}
                     onClick={() => {
@@ -123,6 +138,7 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
                         </svg>
                     </button>
                 )}
+
                 {!isHidden && (
                     <button className="cart-btn"
                 onClick={() => navigation('/cart')}>
@@ -183,6 +199,18 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
                 )
                 )}
             </div>
+            {location.pathname === '/' && (
+            <div className="burger-button-box">
+                <button 
+                 className={`burger ${isBurgerClicked ? 'open' : ''}`}
+                 onClick={() => setIsBurgerClicked(!isBurgerClicked)}
+                >
+                    <span className="burger-span"></span>
+                    <span className="burger-span"></span>
+                    <span className="burger-span"></span>
+                </button>
+            </div>
+            )}
         </header>
 
         {location.pathname === '/' && (
@@ -259,8 +287,11 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
 
                     <div className="search-result">
                             <div className="nav-products-container"
-                            style={{ 
-                                transform: `translateX(calc(-${currentIndex} * (33.333% + 10px)))` }}
+                            style={{
+                                transform: isMobile
+                                    ? `translateX(calc(-${currentIndex} * (100vw - 15px)))`
+                                    : `translateX(calc(-${currentIndex} * (33.333% + 10px)))`
+                            }}
                             >
                                 {filteredProducts.map(product => {
                                     if (!product) return null

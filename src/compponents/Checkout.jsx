@@ -1,10 +1,13 @@
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { CURRENT_YEAR } from "../constant"
 import { MIN_EXPIRY_YEAR } from "../constant"
+import '../styles/checkout.scss'
 
 function Checkout({ cart, clearCart}) {
     const navigate = useNavigate()
+
+    const topRef = useRef()
 
     const [name, setName] = useState('')
     const [phone, setPhone] = useState('')
@@ -19,6 +22,12 @@ function Checkout({ cart, clearCart}) {
     const [payment, setPayment] = useState('cash')
 
     const [error, setError] = useState('')
+
+    useEffect(() => {
+        if (error) {
+            topRef.current?.scrollIntoView({ behavior: 'smooth' })
+        }
+    }, [error])
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -145,7 +154,8 @@ function Checkout({ cart, clearCart}) {
             </button>
         </div>
 
-        <h2 className="checkout-title">Checkout</h2>
+        <h2 ref={topRef}
+        className="checkout-title" >Checkout</h2>
 
         <div className="checkout-container">
             <form className="checkout-form"
@@ -155,6 +165,12 @@ function Checkout({ cart, clearCart}) {
                 {error && <p
                 style={{color: 'rgb(226, 55, 55)'}}
                 >{error}</p>}
+
+                <div className="disclaimer-checkout-box">
+                    <h2 className="disclaimer-checkout-text">
+                        Demo only - do not use real data!
+                    </h2>
+                </div>
                 
                 <div className="form-group">
                     <label className="form-label">Full Name</label>

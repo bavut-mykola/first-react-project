@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "../styles/orderDetails.scss";
 
 function OrderDetails() {
     const [order, setOrder] = useState(null)

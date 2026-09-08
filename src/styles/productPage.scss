@@ -1,0 +1,365 @@
+@use "./variables" as *;
+
+.product-page {
+  background-color: $background;
+  color: $text;
+  min-height: 100vh;
+  padding: 60px 24px 100px;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  .product-layout {
+    max-width: $container-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  // Buttons: Cream bg, Black text and border -> Hover: inverted, no border radius, wider padding
+  button {
+    background-color: $cream;
+    color: $black;
+    border: 1px solid $black;
+    padding: 14px 40px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 0;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background-color: $black;
+      color: $cream;
+    }
+  }
+
+  > button {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .product-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    img {
+      background: none;
+      box-shadow: none;
+      padding: 0;
+      border-radius: 0;
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      margin: 0;
+    }
+
+    .category {
+      font-size: 18px;
+      opacity: 0.7;
+    }
+  }
+
+  .product-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    background-color: $surface;
+    padding: 40px;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+
+    h3 {
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.6;
+      margin-bottom: 12px;
+    }
+
+    .current-rating, .price-info {
+      font-size: 24px;
+    }
+    
+    .price-info p {
+      margin-bottom: 8px;
+    }
+  }
+
+  .description {
+    background-color: $surface;
+    padding: 40px;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+  }
+
+  .purchase-product-box {
+    text-align: center;
+    background-color: $surface;
+    padding: 48px;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-md;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    h3 {
+      font-size: 28px;
+      font-weight: 600;
+    }
+
+    .add-to-cart-btn {
+      padding: 16px 48px;
+      font-size: 18px;
+    }
+  }
+
+  .review-section {
+    background-color: $surface;
+    padding: 48px;
+    border-radius: $radius-lg;
+    box-shadow: $shadow-sm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+
+    .rating-input, .review-input {
+      width: 100%;
+      text-align: left;
+    }
+
+    h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      opacity: 0.7;
+    }
+
+    input[type="number"], textarea {
+      width: 100%;
+      background: $cream;
+      border: 1px solid $border;
+      padding: 14px 16px;
+      border-radius: 0;
+      color: $text;
+      font-family: inherit;
+      font-size: 16px;
+      outline: none;
+      transition: $transition;
+
+      &:focus {
+        border-color: $black;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .submit-btn {
+      align-self: center;
+      margin-top: 8px;
+    }
+
+    > p {
+      color: rgb(163, 36, 36);
+      font-weight: 500;
+    }
+
+    > h2 {
+      font-size: 20px;
+      text-align: center;
+      margin-top: 12px;
+    }
+  }
+
+  .reviews-container {
+    > h3 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 32px;
+    }
+
+    .reviews-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .review-card {
+        background-color: $surface;
+        padding: 32px;
+        border-radius: $radius-md;
+        box-shadow: $shadow-sm;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        .review-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .review-username {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+          }
+
+          .review-date {
+            font-size: 14px;
+            opacity: 0.5;
+          }
+        }
+
+        .review-rating {
+          font-size: 15px;
+          opacity: 0.8;
+        }
+
+        .review-text {
+          font-size: 16px;
+          line-height: 1.5;
+          opacity: 0.85;
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .product-page {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  .product-name {
+    font-size: 16px;
+  }
+  .product-page .product-header .category {
+    font-size: 12px;
+  }
+  .product-stats {
+    padding: 20px !important;
+    margin-top: -20px;
+  }
+  .rating-display h3 {
+    font-size: 10px !important;
+  }
+  .current-rating {
+    font-size: 12px !important;
+  }
+  .price-info p {
+    font-size: 10px !important;
+    display: flex;
+    flex-direction: column;
+    align-items: start !important;
+  }
+  .price-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  .price-strong-text {
+    display: flex;
+  }
+  .product-quantity {
+    margin-right: 15px;
+    width: 120px;
+  }
+  .product-quantity span {
+    margin-right: 20px;
+    display: flex;
+  }
+
+  .description {
+    padding: 25px !important;
+    margin-top: -30px;
+  }
+  .description h3 {
+    font-size: 14px !important;
+  }
+  .description p {
+    font-size: 11px !important;
+  }
+
+  .purchase-product-box {
+    padding: 30px !important;
+    margin-top: -30px;
+  }
+  .purchase-product-box h3 {
+    font-size: 14px !important;
+  }
+  .add-to-cart-btn, .submit-btn {
+    font-size: 10px !important;
+    padding: 8px 14px !important;
+  }
+
+  .rating-input h3 {
+    font-size: 14px !important;
+  }
+  .rating-input label {
+    font-size: 12px !important;
+  }
+  #rating {
+    font-size: 12px !important;
+  }
+
+  .review-input textarea {
+    font-size: 12px !important;
+    height: 80px;
+  }
+
+  .reviews-container h3 {
+    font-size: 18px !important;
+  }
+
+   .reviews-container .review-username,
+   .reviews-container .review-date {
+    font-size: 12px !important;
+  }
+  .review-rating {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px !important;
+  }
+  .review-text {
+    font-size: 14px !important;
+    margin-top: 30px !important;
+  }
+}

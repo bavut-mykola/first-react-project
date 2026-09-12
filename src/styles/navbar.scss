@@ -206,6 +206,10 @@
     pointer-events: none; 
     z-index: 1;
     transition: $transition;
+    color: $black;
+}
+.dropdown-input-box input {
+  color: $black;
 }
 
 .search-input {

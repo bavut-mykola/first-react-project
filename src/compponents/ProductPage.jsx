@@ -118,7 +118,7 @@ function ProductPage({ addToCart, user }) {
 
     return (
   <div className="product-page">
-    <button onClick={() => navigation('/')}>Return to home</button>
+    <button className="return-home-btn" onClick={() => navigation('/')}>Return to home</button>
 
     {showSuccess && <h2>Thanks for your review</h2>}
 

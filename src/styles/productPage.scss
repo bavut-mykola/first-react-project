@@ -21,7 +21,7 @@
     background-color: $cream;
     color: $black;
     border: 1px solid $black;
-    padding: 14px 40px;
+    padding: 11px 40px; // Трохи менша висота
     font-size: 15px;
     font-weight: 500;
     border-radius: 0;
@@ -82,7 +82,7 @@
     gap: 32px;
     background-color: $surface;
     padding: 40px;
-    border-radius: $radius-lg;
+    border-radius: 0; // Прибрано border-radius
     box-shadow: $shadow-sm;
 
     h3 {
@@ -105,7 +105,7 @@
   .description {
     background-color: $surface;
     padding: 40px;
-    border-radius: $radius-lg;
+    border-radius: 0; // Прибрано border-radius
     box-shadow: $shadow-sm;
 
     h3 {
@@ -125,7 +125,7 @@
     text-align: center;
     background-color: $surface;
     padding: 48px;
-    border-radius: $radius-lg;
+    border-radius: 0; // Прибрано border-radius
     box-shadow: $shadow-md;
     display: flex;
     flex-direction: column;
@@ -138,7 +138,7 @@
     }
 
     .add-to-cart-btn {
-      padding: 16px 48px;
+      padding: 12px 48px;
       font-size: 18px;
     }
   }
@@ -146,7 +146,7 @@
   .review-section {
     background-color: $surface;
     padding: 48px;
-    border-radius: $radius-lg;
+    border-radius: 0; // Прибрано border-radius
     box-shadow: $shadow-sm;
     display: flex;
     flex-direction: column;
@@ -175,13 +175,14 @@
       width: 100%;
       background: $cream;
       border: 1px solid $border;
-      padding: 14px 16px;
+      padding: 10px 20px; // Зроблено довшими по ширині всередині та з меншою висотою
       border-radius: 0;
       color: $text;
       font-family: inherit;
       font-size: 16px;
       outline: none;
       transition: $transition;
+      box-sizing: border-box;
 
       &:focus {
         border-color: $black;
@@ -190,6 +191,7 @@
 
     textarea {
       resize: vertical;
+      height: 100px;
     }
 
     .submit-btn {
@@ -224,7 +226,7 @@
       .review-card {
         background-color: $surface;
         padding: 32px;
-        border-radius: $radius-md;
+        border-radius: 0; // Прибрано border-radius
         box-shadow: $shadow-sm;
         display: flex;
         flex-direction: column;
@@ -263,10 +265,14 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
   .product-page {
     padding-top: 30px;
     padding-bottom: 20px;
+  }
+  .return-home-btn {
+    font-size: 14px !important;
+    padding: 10px 28px !important;
   }
   .product-name {
     font-size: 16px;
@@ -338,19 +344,21 @@
   }
   #rating {
     font-size: 12px !important;
+    padding: 8px 14px !important; 
   }
 
   .review-input textarea {
     font-size: 12px !important;
-    height: 80px;
+    height: 70px;
+    padding: 8px 14px !important; 
   }
 
   .reviews-container h3 {
     font-size: 18px !important;
   }
 
-   .reviews-container .review-username,
-   .reviews-container .review-date {
+  .reviews-container .review-username,
+  .reviews-container .review-date {
     font-size: 12px !important;
   }
   .review-rating {

@@ -1,12 +1,13 @@
 @use "./variables" as *;
 
 .footer {
-    width: 100vw;
+    width: 100dvw;
 
     display: flex;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
-    padding: 10px 40px;
+    padding: 40px 70px;
+    padding-bottom: 25px;
     margin-bottom: 25px;
 
     border-top: solid $border 1px;
@@ -17,10 +18,23 @@
     background-color: $cream;
 }
 
+.left-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.footer-number {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
 .footer-links {
     display: flex;
-    gap: 25px;
-    padding-left: 120px;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+    padding-bottom: 20px;
 }
 
 .footer-link {
@@ -71,7 +85,45 @@
     font-weight: 300;
 }
 
-@media (max-width: 320px) {
+.services-links {
+    display: grid;
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+    column-gap: 20px !important;
+    gap: 5px;
+}
+.services-links a {
+    justify-self: start;
+}
+.services-links a:nth-child(n + 5) {
+    justify-self: end;
+}
+
+.service-link {
+    font-size: 14px;
+    text-decoration: underline;
+    color: $black;
+    transition: .3s ease;
+    &:hover {
+        color: #5a5757;
+    }
+}
+
+.middle-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+.footer-button {
+    transition: .3s ease;
+    &:hover {
+        color: #363535;
+        transform: scale(1.02);
+    }
+}
+
+@media (max-width: 420px) {
     .footer {
         padding: 10px 20px;
 
@@ -79,10 +131,37 @@
         flex-direction: column;
     }
 
+    .footer-logo h3 {
+        text-align: start;
+    }
     .footer-links {
         padding: 15px 0;
 
         display: flex;
         flex-direction: column;
+    }
+    .footer-link {
+        font-size: 12px;
+    }
+    .footer-number {
+        font-size: 14px;
+    }
+    .service-title {
+        font-size: 16px;
+        text-align: start;
+    }
+    .service-link {
+        font-size: 10px;
+    }
+    .services-links {
+        padding-bottom: 15px;
+    }
+    .footer-button svg {
+        width: 30px;
+        height: 30px;
+    }
+    .middle-footer {
+        flex-direction: row;
+        gap: 10px;
     }
 }

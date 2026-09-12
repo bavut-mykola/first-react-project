@@ -1,0 +1,237 @@
+@use "./variables" as *;
+
+.repairing-page {
+  width: 100%;
+  padding: 80px 60px;
+  background-color: $cream;
+  color: $black;
+  box-sizing: border-box;
+  text-align: left;
+
+  .repairing-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+
+  .repairing-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    max-width: 600px;
+    opacity: 0.75;
+    text-align: left;
+  }
+
+  .repair-sections-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+    align-items: stretch;
+  }
+
+  .repair-category-card {
+    padding: 30px;
+    border: 1px solid #d1caca;
+    // border-radius: $radius-md;
+    background-color: $surface;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+
+    .category-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba($black, 0.15);
+      text-align: left;
+    }
+
+    .service-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      .service-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 15px;
+        font-size: 0.9rem;
+        text-align: left;
+
+        .service-name {
+          opacity: 0.85;
+          flex: 1;
+          text-align: left;
+        }
+
+        .service-price {
+          font-weight: 600;
+          white-space: nowrap;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .repair-info-block {
+    padding: 40px 50px;
+    border: 1px solid #d1caca;
+    // border-radius: $radius-md;
+    background-color: $surface;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+
+    .info-text {
+      max-width: 400px;
+      text-align: left;
+
+      h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        opacity: 0.75;
+      }
+    }
+
+    .contacts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 300px;
+
+      .contact-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.9rem;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba($black, 0.08);
+
+        &:last-child {
+          border-bottom: none;
+          padding-bottom: 0;
+        }
+
+        .contact-label {
+          opacity: 0.6;
+          text-align: left;
+        }
+
+        .contact-value {
+          font-weight: 600;
+          color: $black;
+          text-decoration: none;
+          text-align: right;
+
+          &:hover:not(.plain) {
+            text-decoration: underline;
+          }
+
+          &.plain {
+            font-weight: 500;
+            opacity: 0.85;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Планшети та менші екрани */
+@media (max-width: 1024px) {
+  .repairing-page {
+    .repair-sections-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .repair-info-block {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+
+      .contacts-list {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Мобільні екрани */
+@media (max-width: 420px) {
+  .repairing-page {
+    padding: 40px 16px;
+
+    .repairing-title {
+      font-size: 1.6rem;
+    }
+
+    .repairing-subtitle {
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+
+    .repair-category-card {
+      padding: 20px 16px;
+      gap: 14px;
+
+      .category-title {
+        font-size: 1.1rem;
+      }
+
+      .service-list .service-item {
+        font-size: 0.85krem;
+        flex-direction: column;
+        gap: 4px;
+        align-items: flex-start;
+
+        .service-price {
+          text-align: left;
+        }
+      }
+    }
+
+    .repair-info-block {
+      padding: 24px 16px;
+
+      .info-text {
+        h3 {
+          font-size: 1.25rem;
+        }
+        p {
+          font-size: 0.85rem;
+        }
+      }
+
+      .contacts-list {
+        min-width: 100%;
+
+        .contact-item {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 2px;
+          padding-bottom: 12px;
+
+          .contact-value {
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

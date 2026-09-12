@@ -25,10 +25,10 @@
 .auth-form {
     background-color: $surface;
     border: 1px solid $border;
-    border-radius: $radius-lg;
+    border-radius: 0;
     padding: 48px 40px;
     width: 100%;
-    max-width: 420px;
+    max-width: 440px; // Трохи ширша форма загалом
     box-shadow: $shadow-md;
     transition: transform $transition;
 
@@ -46,6 +46,7 @@
         display: flex;
         flex-direction: column;
         margin-bottom: 24px;
+        width: 100%;
 
         label {
             font-size: 13px;
@@ -56,14 +57,16 @@
         }
 
         input {
+            width: 100%;
             background-color: $background;
             border: 1px solid $border;
-            border-radius: $radius-sm;
-            padding: 14px 16px;
+            border-radius: 0;
+            padding: 10px 18px; // Зменшена висота, але довші бокові відступи
             font-size: 15px;
             color: $text;
             outline: none;
             transition: all $transition;
+            box-sizing: border-box;
 
             &::placeholder {
                 color: rgba($text, 0.35);
@@ -88,7 +91,7 @@
             background-color: rgba(255, 0, 0, 0.06);
             border-left: 2px solid $text;
             padding: 6px 10px;
-            border-radius: 4px;
+            border-radius: 0;
         }
     }
 
@@ -97,14 +100,15 @@
         background-color: $text;
         color: $background;
         border: none;
-        border-radius: $radius-sm;
-        padding: 14px 16px;
+        border-radius: 0;
+        padding: 11px 18px; // Менша висота, ширша кнопка
         font-size: 15px;
         font-weight: 500;
         cursor: pointer;
         transition: opacity $transition, transform $transition;
         margin-top: 8px;
         letter-spacing: -0.2px;
+        box-sizing: border-box;
 
         &:hover {
             opacity: 0.88;
@@ -134,7 +138,6 @@
     }
 }
 
-// Global/Fallback styling for additional buttons outside the form (like Back to Home)
 .auth-container > button {
     background: transparent;
     border: none;
@@ -144,7 +147,7 @@
     cursor: pointer;
     margin-top: 24px;
     padding: 8px 16px;
-    border-radius: $radius-sm;
+    border-radius: 0;
     transition: all $transition;
 
     &:hover {
@@ -153,12 +156,11 @@
     }
 }
 
-// Styling for EyeButton component if it renders inside the form group
 .form-group {
     button {
         position: absolute;
         right: 14px;
-        top: 42px;
+        top: 38px; 
         background: none;
         border: none;
         cursor: pointer;
@@ -187,7 +189,6 @@
     align-items: center;
     justify-content: space-between;
     gap: 15px;
-
     padding-bottom: 30px;
 
     h2 {
@@ -201,7 +202,7 @@
     border: 1px solid $black;
     width: 50px;
     height: 50px;
-    border-radius: 50%;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -215,11 +216,30 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
+    .auth-form {
+        padding: 32px 20px; 
+    }
+
     input::placeholder {
         color: transparent !important;
     }
+
     .auth-form .form-group input {
         font-size: 12px !important;
+        padding: 8px 14px; 
+    }
+    .auth-form .auth-btn {
+        padding: 10px 14px;
+    }
+    .form-group button {
+        top: 33px; 
+    }
+    .scroll-down-sign-up-btn {
+        height: 36px;
+        width: 36px;
+    }
+    .auth-toggle-text span {
+        font-size: 16px !important;
     }
 }

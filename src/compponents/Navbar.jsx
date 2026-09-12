@@ -20,7 +20,23 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
 
     const [isSearched, setIsSearched] = useState(false)
 
-    const [isBurgerClicked, setIsBurgerClicked] = useState(false) 
+    const [isBurgerClicked, setIsBurgerClicked] = useState(false);
+
+    const [isMobileScreen, setIsMobileScreen] = useState(
+        window.matchMedia("(max-width: 420px)").matches
+    );
+
+    useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 420px)");
+    
+    const handleResize = (e) => {
+        setIsMobileScreen(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleResize);
+
+    return () => mediaQuery.removeEventListener('change', handleResize);
+}, []);
 
     const inputRef = useRef(null)
 
@@ -101,7 +117,7 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
 
     useEffect(() => {
         setIsBurgerClicked(false)
-    }, [location.pathname])
+    }, [location.pathname]) 
 
     return (
         <>
@@ -112,10 +128,8 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
                 ELIX</h2>
             </div>
 
-            {location.pathname === '/' && (
-                <nav className={
-                    `navigation ${isBurgerClicked ? 'opened' : ''} `
-                }>
+            {location.pathname === '/' && (!isMobileScreen || !isSearched) && (
+                <nav className={`navigation ${isBurgerClicked ? 'opened' : ''}`}>
                     <a href="#home" className="nav-link">home</a>
                     <a href="#catalog" className="nav-link">catalog</a>
                     <a href="#top" className="nav-link">top</a>
@@ -123,7 +137,7 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
             )}
 
             <div className={
-                `main-buttons-box ${isBurgerClicked ? 'opened' : ''}`
+                `main-buttons-box ${isBurgerClicked ? 'opened' : ''} ${isMobileScreen && isSearched ? 'hidden-search' : ''}`
             }>
                 {!isHidden && location.pathname === '/' && (
                     <button className="search-open-btn"
@@ -215,7 +229,7 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
 
         {location.pathname === '/' && (
             <>
-            <div className={isSearchOpened ? 'input-box-wrapper opened' : 'input-box-wrapper closed'}
+            <div className={`input-box-wrapper ${isSearchOpened ? 'opened' : 'closed'} ${isMobileScreen && isSearched ? 'searched-mobile' : ''}`}
             ref={inputWrapperRef} >
                 <div className="dropdown-input-box">
                     <label className={search.length > 0 ? "hidden-label" : ""}
@@ -245,7 +259,7 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
             </div>
 
             <div ref={dropDownRef}
-            className={!isSearched ? 'dropdown-main main-close' : 'dropdown-main main-open'}
+            className={`dropdown-main ${!isSearched ? 'main-close' : 'main-open'} ${isMobileScreen && isSearched ? 'searched-mobile' : ''}`}
             > 
 
                 <div className="dropdown-search">

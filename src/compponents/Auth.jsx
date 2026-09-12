@@ -147,7 +147,7 @@ function Auth({ onLogin }) {
                         onBlur={() => setIsWrittingThePassword(false)}
                         style={{border: (error.toLowerCase().includes('password') || (error.includes('field') && !password)) ? '1px solid red' : '1px solid #ccc'}}
                     />
-                    <EyeButton show={showPassword} toggle={() => setShowPassword(!showPassword)}/>
+                    <EyeButton className="eye-btn" show={showPassword} toggle={() => setShowPassword(!showPassword)}/>
 
                     {isWrittingThePassword && (
                         <p className="hint-text">Min 8 characters, at least 1 uppercase letter</p>
@@ -209,7 +209,7 @@ function Auth({ onLogin }) {
                     placeholder="Create a password" 
                     value={password} 
                     onChange={(e) => { setPassword(e.target.value); setError(''); }}/>
-                    <EyeButton show={showPassword} toggle={() => setShowPassword(!showPassword)}/>
+                    <EyeButton className="eye-btn" show={showPassword} toggle={() => setShowPassword(!showPassword)}/>
                 </div>
 
                 <div className="form-group">
@@ -218,7 +218,7 @@ function Auth({ onLogin }) {
                     placeholder="Repeat your password" 
                     value={confirmPassword} 
                     onChange={(e) => { setConfirmPassword(e.target.value); setError(''); }}/>
-                    <EyeButton show={showConfirmPassword} toggle={() => setShowConfirmPassword(!showConfirmPassword)}/>
+                    <EyeButton className="eye-btn" show={showConfirmPassword} toggle={() => setShowConfirmPassword(!showConfirmPassword)}/>
                     
                     {error && <p className="error-text" style={{color: 'red', fontSize: '14px', marginTop: '5px'}}>{error}</p>}
                 </div>

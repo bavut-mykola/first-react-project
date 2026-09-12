@@ -1,0 +1,234 @@
+@use "./variables" as *;
+
+.contacts-page {
+  width: 100%;
+  padding: 100px 60px;
+  background-color: $cream;
+  color: $black;
+  box-sizing: border-box;
+  text-align: left;
+
+  .contacts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .contacts-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .contacts-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    max-width: 750px;
+    opacity: 0.75;
+  }
+
+  .contacts-content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .contacts-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .info-card {
+      padding: 30px;
+      border: 1px solid #d1caca;
+      border-radius: 0;
+      background-color: $surface;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .contacts-form-column {
+    .contact-form {
+      padding: 40px;
+      border: 1px solid #d1caca;
+      border-radius: 0;
+      background-color: $surface;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      h3 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        label {
+          font-size: 0.85rem;
+          font-weight: 600;
+          opacity: 0.8;
+          text-transform: uppercase;
+          letter-spacing: 0.03em;
+        }
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 12px 16px;
+          border: 1px solid #d1caca;
+          border-radius: 0;
+          background-color: $cream;
+          color: $black;
+          font-size: 0.95rem;
+          font-family: inherit;
+          box-sizing: border-box;
+          transition: border-color 0.2s ease;
+
+          &:focus {
+            outline: none;
+            border-color: $black;
+          }
+        }
+
+        textarea {
+          resize: vertical;
+        }
+      }
+
+      .submit-btn {
+        margin-top: 10px;
+        padding: 14px 28px;
+        background-color: $black;
+        color: $cream;
+        font-size: 0.95rem;
+        font-weight: 500;
+        border: 1px solid $black;
+        border-radius: 0;
+        cursor: pointer;
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        &:hover {
+          background-color: $cream;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.error-message-text {
+  color: #d9534f;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  background-color: rgba(#d9534f, 0.1);
+  border-radius: 0;
+  border: 1px solid #d1caca;
+}
+
+.success-message-text {
+  color: #2e7d32;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 10px 14px;
+  background-color: rgba(#2e7d32, 0.1);
+  border-radius: 0;
+  border: 1px solid #d1caca;
+}
+
+@media (max-width: 1024px) {
+  .contacts-page {
+    .contacts-content-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .contacts-page {
+    padding: 30px 10px;
+
+    .contacts-title {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    .contacts-subtitle {
+      font-size: 0.75rem;
+      margin-bottom: 24px;
+    }
+
+    .contacts-info-column .info-card {
+      padding: 16px 12px;
+      gap: 6px;
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      p {
+        font-size: 0.75rem;
+      }
+    }
+
+    .contacts-form-column {
+      .contact-form {
+        padding: 16px 12px;
+        gap: 12px;
+
+        h3 {
+          font-size: 1.1rem;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+          gap: 12px;
+        }
+
+        .form-group {
+          gap: 4px;
+
+          label {
+            font-size: 0.7rem;
+          }
+
+          input,
+          textarea {
+            padding: 10px 12px;
+            font-size: 0.85rem;
+          }
+        }
+
+        .submit-btn {
+          padding: 10px 20px;
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}

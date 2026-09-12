@@ -10,6 +10,16 @@ import Cart from "./compponents/Cart";
 import Checkout from "./compponents/Checkout";
 import OrderDetails from "./compponents/orderDetails";
 import ProductPage from "./compponents/ProductPage";
+
+import Repairing from "./compponents/Repairing";
+import Prices from "./compponents/Pricees";
+import AboutUs from "./compponents/AboutUs";
+import Delivery from "./compponents/Delivery";
+import Warranty from "./compponents/Warranty";
+import TradeIn from "./compponents/TradeIn";
+import Support from "./compponents/Support";
+import Contacts from "./compponents/Contacts";
+
 import "./styles/global.scss";
 
 function App() {
@@ -18,6 +28,15 @@ function App() {
     const [loading, setLoading] = useState(false)
 
     const [products, setProducts] = useState([])
+
+    const [services, setServices] = useState([]);
+
+    useEffect(() => {
+        fetch("/data/services.json")
+            .then(res => res.json())
+            .then(data => setServices(data))
+            .catch(err => console.error("Error loading services:", err));
+    }, []);
 
     async function loadProducts() {
         try {
@@ -121,16 +140,29 @@ function App() {
 
     return (
         <>   
-        <h2>{loading && 'Loading products...'}</h2>
         <Navbar user={user} onLogout={logoutUser} cart={cart} products={products} addToCart={addToCart} />
         <Routes>
             <Route path='/' element={
                 <>
                 <Home onScrollToProducts={scrollToProducts} />
                 <div ref={productsSectionRef}>
-                    <Products addToCart={addToCart} products={products} />
+                    {loading ? (
+                        <div className="catalog-loading">
+                            <div className="spinner"></div>
+                            <p>Loading products...</p>
+                        </div>
+                    ) : (
+                        <Products addToCart={addToCart} products={products} />
+                    )}
                 </div>
-                <TopProducts addToCart={addToCart} products={products} />
+                    {loading ? (
+                        <div className="catalog-loading">
+                            <div className="spinner"></div>
+                            <p>Loading products...</p>
+                        </div>
+                    ) : (
+                        <TopProducts addToCart={addToCart} products={products} />
+                    )}
                 <Footer />
                 </>
             }/>
@@ -149,6 +181,17 @@ function App() {
             <Route path="/order-details" element={<OrderDetails />} />
 
             <Route path="/product/:id" element={<ProductPage addToCart={addToCart} user={user} />} />
+
+            <Route path="/repair" element={<Repairing />} />
+            <Route path="/prices" element={<Prices />} />
+            <Route path="/about" element={<AboutUs />} />
+            <Route path="/delivery" element={<Delivery />} />
+
+            <Route path="/warranty" element={<Warranty />} />
+            <Route path="/trade-in" element={<TradeIn />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/contacts" element={<Contacts />} />
+
         </Routes>
         </> 
     )

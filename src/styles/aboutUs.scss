@@ -1,0 +1,383 @@
+@use "./variables" as *;
+
+.about-page {
+  background-color: $background;
+  color: $text;
+  width: 100%;
+  padding-bottom: 80px;
+
+  .container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .about-hero {
+    padding: 100px 0 60px;
+    text-align: center;
+
+    .about-badge {
+      display: inline-block;
+      padding: 6px 14px;
+      background-color: $surface;
+      border: 1px solid $border;
+      // border-radius: $radius-sm;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .about-title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.15;
+      max-width: 800px;
+      margin: 0 auto 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .about-lead {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 auto;
+      opacity: 0.8;
+    }
+  }
+
+  .about-story {
+    padding: 60px 0;
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .about-text-block {
+      background-color: $surface;
+      border: 1px solid $border;
+      // border-radius: $radius-lg;
+      padding: 40px;
+      transition: $transition;
+
+      &:hover {
+        background-color: $surface-hover;
+        box-shadow: $shadow-sm;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.7;
+        opacity: 0.85;
+        margin-bottom: 16px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .about-stats {
+    padding: 60px 0;
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .stat-card {
+      background-color: $surface;
+      border: 1px solid $border;
+      // border-radius: $radius-md;
+      padding: 36px 28px;
+      text-align: center;
+      transition: $transition;
+      box-shadow: $shadow-sm;
+
+      &:hover {
+        transform: translateY(-4px);
+        box-shadow: $shadow-md;
+        background-color: $surface-hover;
+      }
+
+      .stat-number {
+        display: block;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 12px;
+        letter-spacing: -0.02em;
+      }
+
+      .stat-label {
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .stat-desc {
+        font-size: 14px;
+        line-height: 1.5;
+        opacity: 0.75;
+        margin: 0;
+      }
+    }
+  }
+
+  .about-values {
+    padding: 60px 0;
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+
+      h2 {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        letter-spacing: -0.01em;
+      }
+
+      p {
+        font-size: 16px;
+        opacity: 0.75;
+        margin: 0;
+      }
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .value-item {
+      background-color: $surface;
+      border: 1px solid $border;
+      // border-radius: $radius-md;
+      padding: 32px;
+      transition: $transition;
+
+      &:hover {
+        background-color: $surface-hover;
+        box-shadow: $shadow-sm;
+      }
+
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+        opacity: 0.8;
+        margin: 0;
+      }
+    }
+  }
+
+  .about-mission {
+    padding: 40px 0 20px;
+
+    .mission-container {
+      background-color: $surface;
+      border: 1px solid $border;
+      // border-radius: $radius-lg;
+      padding: 48px;
+      text-align: center;
+      transition: $transition;
+
+      &:hover {
+        box-shadow: $shadow-sm;
+        background-color: $surface-hover;
+      }
+
+      h2 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.7;
+        max-width: 720px;
+        margin: 0 auto;
+        opacity: 0.85;
+      }
+    }
+  }
+
+  @media (max-width: 420px) {
+    padding-bottom: 40px;
+
+    .container {
+      padding: 0 16px;
+    }
+
+    .about-hero {
+      padding: 60px 0 40px;
+
+      .about-title {
+        font-size: 30px;
+        margin-bottom: 16px;
+      }
+
+      .about-lead {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+    }
+
+    .about-story {
+      padding: 30px 0;
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .about-text-block {
+        padding: 24px;
+
+        h2 {
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .about-stats {
+      padding: 30px 0;
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .stat-card {
+        padding: 24px;
+
+        .stat-number {
+          font-size: 32px;
+        }
+      }
+    }
+
+    .about-values {
+      padding: 30px 0;
+
+      .section-header {
+        margin-bottom: 24px;
+
+        h2 {
+          font-size: 24px;
+        }
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .value-item {
+        padding: 24px;
+      }
+    }
+
+    .about-mission {
+      padding: 20px 0;
+
+      .mission-container {
+        padding: 28px 16px;
+        margin-left: 4px;
+
+        h2 {
+          font-size: 20px;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+    .about-text-block {
+    position: relative;
+    padding-bottom: 40px; // Місце для стрілочки
+
+    .card-full-text {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, opacity 0.3s ease;
+      margin-top: 0;
+    }
+
+    &.expanded {
+      .card-full-text {
+        max-height: 300px;
+        opacity: 1;
+        margin-top: 10px;
+      }
+    }
+
+    .expand-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: inherit;
+
+      .arrow-icon {
+        transition: transform 0.3s ease;
+        width: 22px;
+        height: 22px;
+
+        &.open {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+  }
+}
+
+.about-text-block {
+  position: relative;
+
+  .card-full-text {
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+  }
+
+  .expand-btn {
+    display: none; 
+  }
+}

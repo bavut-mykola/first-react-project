@@ -12,6 +12,9 @@
     animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.dropdown-main.main-close{
+    display: none;
+}
 .dropdown-menu {
     position: fixed;
     width: 50vw;
@@ -167,14 +170,13 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
     .dropdown-menu {
         width: 92vw !important;
         height: 40vh !important;
         padding: 20px 14px !important;
         top: 8vh !important;
     }
-
     .dropdown-user-info {
         padding-right: 32px;
     }

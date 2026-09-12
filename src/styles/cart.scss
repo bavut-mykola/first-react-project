@@ -194,7 +194,13 @@
   text-align: left;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
+  .cart-page {
+    padding-bottom: 0;
+  }
+  .cart-empty {
+    margin-top: -40px;
+  }
   .cart-header h2 {
     font-size: 22px;
     margin-left: 25px;
@@ -209,10 +215,13 @@
     font-size: 12px;
   }
   .empty-title {
-    font-size: 22px;
+    font-size: 20px;
   }
   .empty-text {
-    font-size: 16px;
+    font-size: 14px;
+  }
+  .empty-btn {
+    font-size: 12px;
   }
 
   .cart-item {
@@ -237,7 +246,7 @@
   }
   .name-quant-total-box h2,
   .name-quant-total-box p {
-    font-size: 16px !important;
+    font-size: 14px !important;
   }
   .cart-item-total {
     width: 90px;
@@ -248,18 +257,18 @@
     margin-left: -30px;
   }
   .cart-item-actions button {
-    font-size: 14px;
+    font-size: 12px;
   }
   .btn-quantity {
-    height: 32px;
-    width: 32px;
+    height: 22px;
+    width: 22px;
   }
   .btn-remove {
     font-size: 10px !important;
   }
   .quantity-btns-box {
     display: flex;
-    gap: 30px;
+    gap: 50px;
   }
 
 

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "Repairing",
+    "path": "/repair"
+  },
+  {
+    "id": 2,
+    "title": "Prices",
+    "path": "/prices"
+  },
+  {
+    "id": 3,
+    "title": "About Us",
+    "path": "/about"
+  },
+  {
+    "id": 4,
+    "title": "Delivery",
+    "path": "/delivery"
+  },
+  {
+    "id": 5,
+    "title": "Warranty",
+    "path": "/warranty"
+  },
+  {
+    "id": 6,
+    "title": "Trade-In",
+    "path": "/trade-in"
+  },
+  {
+    "id": 7,
+    "title": "Support",
+    "path": "/support"
+  },
+  {
+    "id": 8,
+    "title": "Contacts",
+    "path": "/contacts"
+  }
+]

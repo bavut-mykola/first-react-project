@@ -18,7 +18,7 @@
             color: $black;
             border: 1px solid $black;
             padding: 10px 20px;
-            border-radius: $radius-sm;
+            border-radius: 0;
             font-size: 14px;
             font-weight: 500;
             cursor: pointer;
@@ -48,7 +48,7 @@
             width: 100%;
             background-color: $surface;
             border: 1px solid $border;
-            border-radius: $radius-lg;
+            border-radius: 0;
             padding: 48px;
             box-shadow: $shadow-sm;
             display: flex;
@@ -63,12 +63,11 @@
                 margin-bottom: 0;
             }
 
-            // Фіксуємо блок для помилки, щоб форма не "стрибала" при її появі/зникненні
             .error-message {
                 color: $black;
                 background-color: rgba(10, 10, 10, 0.05);
                 padding: 12px 16px;
-                border-radius: $radius-sm;
+                border-radius: 0;
                 font-size: 14px;
                 border-left: 3px solid $black;
                 margin: 0;
@@ -79,7 +78,7 @@
                 background-color: $black;
                 border: 1px dashed $border;
                 padding: 14px 16px;
-                border-radius: $radius-sm;
+                border-radius: 0;
                 text-align: center;
                 margin-top: -8px;
 
@@ -109,7 +108,7 @@
             width: 100%;
             background-color: $cream;
             border: 1px solid $border;
-            border-radius: $radius-sm;
+            border-radius: 0;
             padding: 14px 16px;
             font-size: 15px;
             color: $text;
@@ -145,7 +144,7 @@
             background-color: $cream;
             border: 1px solid $border;
             padding: 14px 16px;
-            border-radius: $radius-sm;
+            border-radius: 0;
             cursor: pointer;
             font-size: 14px;
             font-weight: 500;
@@ -164,7 +163,7 @@
     .order-summary {
         background-color: $surface-hover;
         border: 1px solid $border;
-        border-radius: $radius-md;
+        border-radius: 0;
         padding: 32px;
         margin-top: 16px;
 
@@ -237,7 +236,7 @@
             color: $black;
             border: 1px solid $black;
             padding: 16px;
-            border-radius: $radius-md;
+            border-radius: 0;
             font-size: 15px;
             font-weight: 600;
             cursor: pointer;
@@ -251,7 +250,7 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 420px) {
     .checkout-navigation, 
     .checkout-title {
         width: 180px;
@@ -271,14 +270,14 @@
     }
 
     .radio-group {
-    flex-direction: column;
-    gap: 10px;
+        flex-direction: column;
+        gap: 10px;
 
-    .radio-label {
-        width: 100%;
-        box-sizing: border-box;
-        justify-content: center;
-    }
+        .radio-label {
+            width: 100%;
+            box-sizing: border-box;
+            justify-content: center;
+        }
     }
 
     .form-row {
@@ -288,7 +287,6 @@
     .form-row label {
         font-size: 12px !important;
     }
-
 
     .order-summary {
         width: 230px;

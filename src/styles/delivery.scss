@@ -1,0 +1,211 @@
+@use "./variables" as *;
+
+.delivery-page {
+  width: 100%;
+  padding: 100px 60px;
+  background-color: $cream;
+  color: $black;
+  box-sizing: border-box;
+  text-align: left;
+
+  .delivery-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .delivery-subtitle {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 60px;
+    max-width: 750px;
+    opacity: 0.75;
+  }
+
+  .delivery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+    align-items: stretch;
+  }
+
+  .delivery-card {
+    padding: 35px 30px;
+    border: 1px solid rgba($black, 0.15);
+    // border-radius: $radius-md;
+    background-color: $surface;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .delivery-desc {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      opacity: 0.75;
+      flex: 1;
+    }
+
+    .delivery-time {
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0.9;
+      padding-top: 15px;
+      border-top: 1px solid rgba($black, 0.08);
+    }
+
+    .delivery-cost {
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+  }
+
+  .delivery-info-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+
+    .info-box {
+      padding: 35px;
+      border: 1px solid rgba($black, 0.15);
+      // border-radius: $radius-md;
+      background-color: $surface;
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        opacity: 0.75;
+      }
+    }
+  }
+
+  .delivery-cta {
+    padding: 50px;
+    border: 1px solid $black;
+    // border-radius: $radius-md;
+    background-color: $surface;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 0.95rem;
+      opacity: 0.75;
+      max-width: 500px;
+    }
+
+    .delivery-btn {
+      margin-top: 10px;
+      padding: 12px 28px;
+      background-color: $black;
+      color: $cream;
+      border: 1px solid $black;
+      font-size: 0.95rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: $transition;
+
+      &:hover {
+        color: $black;
+        background-color: $cream;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .delivery-page {
+    .delivery-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .delivery-info-section {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .delivery-page {
+    padding: 40px 16px;
+
+    .delivery-title {
+      font-size: 1.6rem;
+    }
+
+    .delivery-subtitle {
+      font-size: 0.85rem;
+      margin-bottom: 30px;
+    }
+
+    .delivery-card {
+      padding: 20px 16px;
+      gap: 10px;
+
+      h3 {
+        font-size: 1.15rem;
+      }
+
+      .delivery-desc {
+        font-size: 0.85rem;
+      }
+
+      .delivery-time {
+        font-size: 0.85rem;
+        padding-top: 10px;
+      }
+
+      .delivery-cost {
+        font-size: 0.8rem;
+      }
+    }
+
+    .delivery-info-section .info-box {
+      padding: 20px 16px;
+
+      h3 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
+    }
+
+    .delivery-cta {
+      padding: 24px 16px;
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.85rem;
+      }
+
+      .delivery-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

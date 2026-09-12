@@ -121,6 +121,9 @@
         color: #363535;
         transform: scale(1.02);
     }
+    .footer-button svg {
+        color: $black;
+    }
 }
 
 @media (max-width: 420px) {

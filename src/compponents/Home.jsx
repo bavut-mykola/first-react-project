@@ -1,4 +1,4 @@
-import homeBg from '../images/home_bg_1.png';
+import homeBg from '../images/home_bg_2.png';
 import "../styles/home.scss";
 
 function Home({ onScrollToProducts }) {

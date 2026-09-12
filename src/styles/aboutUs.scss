@@ -1,5 +1,8 @@
 @use "./variables" as *;
 
+h1, h2, h3 {
+  color: $black;
+}
 .about-page {
   background-color: $background;
   color: $text;

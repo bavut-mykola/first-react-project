@@ -1,5 +1,8 @@
 @use "./variables" as *;
 
+h1, h2, h3 {
+  color: $black;
+}
 .support-page {
   width: 100%;
   padding: 100px 60px;

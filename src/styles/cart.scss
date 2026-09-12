@@ -18,6 +18,7 @@
   h2 {
     font-size: 42px;
     font-weight: 700;
+    color: $black;
   }
 }
 
@@ -160,6 +161,10 @@
   text-align: center;
 
   min-height: 60vh;
+
+  h2 {
+    color: $black;
+  }
 }
 
 .empty-title {
@@ -198,9 +203,6 @@
   .cart-page {
     padding-bottom: 0;
   }
-  .cart-empty {
-    margin-top: -40px;
-  }
   .cart-header h2 {
     font-size: 22px;
     margin-left: 25px;
@@ -222,6 +224,7 @@
   }
   .empty-btn {
     font-size: 12px;
+    margin-top: 80px;
   }
 
   .cart-item {

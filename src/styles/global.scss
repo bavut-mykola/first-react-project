@@ -2,7 +2,10 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
-/* Жорстке прибирання будь-яких рамкових артефактів на рівні всього додатку */
+img {
+  filter: contrast(1.03) brightness(1.01);
+}
+
 html, body, #root {
   width: 100%;
   margin: 0;

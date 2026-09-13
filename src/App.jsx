@@ -42,7 +42,7 @@ function App() {
         try {
             setLoading(true)
 
-            const res = await fetch('https://elix-shop.onrender.com')
+            const res = await fetch('https://elix-shop.onrender.com/products')
 
             if (!res.ok) throw new Error(`HTTP error: ${res.status}`)
 

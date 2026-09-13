@@ -25,7 +25,7 @@ function ProductPage({ addToCart, user }) {
 
     async function loadProduct() {
         try {
-            const res = await fetch('https://elix-shop.onrender.com')
+            const res = await fetch('https://elix-shop.onrender.com/products')
 
             if (!res.ok) throw new Error(`HTTP error: ${res.status}`)
 

@@ -88,7 +88,7 @@ function ProductPage({ addToCart, user }) {
       }
 
       try {
-        const res = await fetch('http://localhost:5000/review', {
+        const res = await fetch('https://elix-shop.onrender.com/review', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(reviewData)

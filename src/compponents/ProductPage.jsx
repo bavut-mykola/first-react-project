@@ -43,7 +43,7 @@ function ProductPage({ addToCart, user }) {
         loadProduct()
     }, [id])
 
-    if (!product) return <h2>Failed to load product</h2>
+    if (!product) return <h2>Failed to get product</h2>
 
     const formatDate = (isoString) => {
       const date = new Date(isoString);

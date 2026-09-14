@@ -1,7 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import homeBg from '../images/home_bg_2.png';
 import "../styles/home.scss";
 
-function Home({ onScrollToProducts }) {
+function Home() {
+    const navigate = useNavigate()
     return (
         <section id="home">
             <div className="home-content">
@@ -12,7 +14,7 @@ function Home({ onScrollToProducts }) {
                 Browse phones, laptops, accessories and more.
             </p>
             <button className="home-btn"
-            onClick={onScrollToProducts}>
+            onClick={() => {navigate('/catalog')}}>
                 Browse Catalog
             </button>
             </div>

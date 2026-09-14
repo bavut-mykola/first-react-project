@@ -131,7 +131,7 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
             {location.pathname === '/' && (!isMobileScreen || !isSearched) && (
                 <nav className={`navigation ${isBurgerClicked ? 'opened' : ''}`}>
                     <a href="#home" className="nav-link">home</a>
-                    <a href="#catalog" className="nav-link">catalog</a>
+                    <a href="#catalog" className="nav-link">products</a>
                     <a href="#top" className="nav-link">top</a>
                 </nav>
             )}
@@ -139,7 +139,7 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
             <div className={
                 `main-buttons-box ${isBurgerClicked ? 'opened' : ''} ${isMobileScreen && isSearched ? 'hidden-search' : ''}`
             }>
-                {!isHidden && location.pathname === '/' && (
+                {!isHidden && (location.pathname === '/' || location.pathname === '/catalog') && (
                     <button className="search-open-btn"
                     ref={inputButtonRef}
                     onClick={() => {
@@ -227,7 +227,7 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
             )}
         </header>
 
-        {location.pathname === '/' && (
+        {(location.pathname === '/' || location.pathname === '/catalog') && (
             <>
             <div className={`input-box-wrapper ${isSearchOpened ? 'opened' : 'closed'} ${isMobileScreen && isSearched ? 'searched-mobile' : ''}`}
             ref={inputWrapperRef} >

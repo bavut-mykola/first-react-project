@@ -1,0 +1,305 @@
+@use "./variables" as *;
+
+button, h1, h2, h3, p, span {
+    color: $black;
+}
+.header-texts-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding-bottom: 160px;
+}
+.header-title {
+    margin-bottom: 0;
+}
+.header-text {
+    width: 780px;
+}
+.header-catalog-btn {
+    background-color: $cream;
+    border: 1px solid $black;
+    
+    padding: 12px 30px;
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    transition: .3s ease;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 100%;
+        transform: scaleY(0);
+        transform-origin: top;
+        top: 0;
+        left: 0;
+        background: $black;
+        transition: .3s ease-in-out;
+        z-index: -1;
+    }
+    &:hover::after {
+        transform: scaleY(1);
+    }
+    &:hover {
+        color: $cream;
+    }
+}
+
+.catalog-main {
+    margin-top: 180px;
+
+    scroll-margin-top: 80px;
+}
+.catalog-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 40px;
+    position: relative;
+
+    &::after {
+        position: absolute;
+        content: "";
+        height: 1px;
+        bottom: 0;
+        left: 40px;  
+        right: 33px;
+        background: #d8d5d5;
+    }
+}
+.filter-box {
+    display: flex;
+    gap: 20px;
+}
+.filter-spans {
+    display: flex;
+    gap: 15px;
+}
+.filter-spans span {
+    cursor: pointer;
+    transition: .2s ease;
+    position: relative;
+    height: fit-content;
+
+    &::before {
+        position: absolute;
+        content: "";
+        background: #d8d5d5;
+        height: 80%;
+        width: 0.5px;
+        top: 10%;
+        right: -6px;
+    }
+    
+    &::after {
+        position: absolute;
+        content: "";
+        height: 0.5px;
+        width: 100%;
+        left: 0;
+        bottom: 2px;
+        background: $black;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: .3s ease;
+    }
+    &:hover::after {
+        transform: scaleX(1);
+    }
+
+    &.active-filter {
+        color: #8f8989;
+        
+        &::after {
+            background: #8f8989;
+        }
+    }
+}
+
+.products-main-box {
+    padding: 0px 40px;
+    padding-bottom: 180px;
+    margin-top: 60px;
+    box-sizing: border-box;
+}
+
+.products-boxes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 60px;
+    row-gap: 80px;
+    width: 100%;
+}
+
+.product-box {
+    height: 360px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.image-box {
+    position: relative;
+}
+.popular-mark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    background: #e63946;
+    color: #ffffff;
+
+    // background: #2563eb;
+    // color: #ffffff;
+    padding: 4px 8px;
+}
+.image-animation-box {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+.product-image {
+    width: 100%;
+    height: 260px;
+
+    transition: .4s ease;
+    
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+.product-price {
+    font-size: 16px;
+}
+.buy-btn {
+    font-size: 20px;
+    padding: 12px 20px;
+    margin-top: 10px;
+    border: 1px solid $black;
+    background: $cream;
+    transition: .3s ease;
+
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        position: absolute;
+        content: "";
+        background: $black;
+
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: .3s ease;
+        z-index: -1;
+    }
+    &:hover::after {
+        transform: scaleX(1);
+    }
+    &:hover {
+        color: $cream;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .header-title {
+        font-size: 26px;
+    }
+    .header-text {
+        font-size: 14px;
+        width: 200px;
+        margin-top: 20px;
+    }
+
+    .top-title {
+        font-size: 16px;
+        padding-bottom: 15px;
+    }
+    .catalog-top {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-left: -20px;
+        &::after {
+            right: 15px;
+        }
+    }
+    .filter-box {
+        gap: 10px;
+        flex-direction: column;
+        align-items: start;
+        padding-bottom: 15px;
+    }
+    .filter-title {
+        font-size: 14px;
+    }
+    .filter-spans span {
+        font-size: 12px;
+    }
+    .filter-spans {
+        gap: 15px;
+    }
+
+    .products-boxes {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 100px;
+        margin-left: -16px;
+    }
+    .product-box {
+        height: 200px;
+        width: 120% !important;
+        box-sizing: border-box;
+    }
+    .product-image {
+        width: 100%;
+        height: 160px;
+    }
+    .popular-mark {
+        font-size: 10px;
+        padding: 2px 4px;
+    }
+    .product-info {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .product-price {
+        font-size: 12px;
+        padding-bottom: 5px;
+    }
+    .buy-btn {
+        font-size: 14px;
+        margin: 0;
+    }
+    .pagination-box {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding-bottom: 10px;
+    }
+    .page-btn {
+        border: 1px solid $black;
+        background: $cream;
+        color: $black;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        font-size: 10px;
+        transition: .3s ease;
+        &:hover {
+            color: $cream;
+            background: $black;
+        }
+    }
+    .page-btn.active {
+        color: $cream;
+        background: $black;
+    } 
+}

@@ -20,9 +20,12 @@ function Products({ addToCart, products }) {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const filteredProducts = useMemo(() => {
-        if (category === "all") return products;
-        return products.filter(p => p.category === category);
-    }, [category, products]);
+        
+    const limitedProducts = products.slice(0, 30);
+    
+    if (category === "all") return limitedProducts;
+    return limitedProducts.filter(p => p.category === category);
+}, [category, products]);
 
     function scrollRight() {
         const maxIndex = Math.floor((filteredProducts.length - 1) / 2) * 2;
@@ -69,10 +72,10 @@ function Products({ addToCart, products }) {
                 >
                     {filteredProducts.length > 0 ? (
                     filteredProducts.map(p => (
-                        <Link to={`/product/${p.id}`} key={p.id} className="product-box">
-                            <div className="image-container">
+                        <div key={p.id} className="product-box">
+                            <Link to={`/product/${p.id}`} className="image-container">
                                 <img className="product-img" src={p.img} alt={p.name} />
-                            </div>
+                            </Link>
                             <div className="product-info">
                                 <h2 className="product-title">{p.name}</h2>
                                 <p className="product-price">{p.price} UAH</p>
@@ -81,7 +84,7 @@ function Products({ addToCart, products }) {
                                 e.preventDefault()
                                 addToCart(p)
                             }}>Add to cart</button>
-                        </Link>
+                        </div>
                     ))
                 ) : (
                     <p className="no-results">No products found in this category.</p>

@@ -96,6 +96,10 @@
   align-items: flex-end;
   gap: 16px;
 }
+.quantity-btns-box {
+  display: flex;
+  gap: 10px;
+}
 
 .btn-quantity {
   width: 48px;
@@ -271,7 +275,7 @@
   }
   .quantity-btns-box {
     display: flex;
-    gap: 50px;
+    gap: 15px;
   }
 
 

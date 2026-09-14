@@ -10,6 +10,7 @@ import Cart from "./compponents/Cart";
 import Checkout from "./compponents/Checkout";
 import OrderDetails from "./compponents/orderDetails";
 import ProductPage from "./compponents/ProductPage";
+import Catalog from "./compponents/Catalog";
 
 import Repairing from "./compponents/Repairing";
 import Prices from "./compponents/Pricees";
@@ -181,6 +182,13 @@ function App() {
             <Route path="/order-details" element={<OrderDetails />} />
 
             <Route path="/product/:id" element={<ProductPage addToCart={addToCart} user={user} />} />
+
+            <Route path="/catalog" element={
+                <>
+                    <Catalog products={products} addToCart={addToCart} />
+                    <Footer />
+                </>
+            } />
 
             <Route path="/repair" element={<Repairing />} />
             <Route path="/prices" element={<Prices />} />

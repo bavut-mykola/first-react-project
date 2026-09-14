@@ -41,10 +41,10 @@ function TopProducts({ addToCart, products }) {
                 style={{ transform: `translateX(calc(-${currentIndex} * (50% + 20px)))` }}
                 >
                     {top.map(p => 
-                        <Link to={`/product/${p.id}`} className="product-box" key={p.id}>
-                            <div className="image-container">
+                        <div className="product-box" key={p.id}>
+                            <Link to={`/product/${p.id}`} className="image-container">
                                 <img className="product-img" src={p.img} alt={p.name} />
-                            </div>
+                            </Link>
                             <div className="product-info">
                                 <h2 className="product-title">{p.name}</h2>
                                 {/* <p className="product-rating">Rating: {p.rating}</p> */}
@@ -55,7 +55,7 @@ function TopProducts({ addToCart, products }) {
                                 e.preventDefault()
                                 addToCart(p)
                             }}>Add to cart</button>
-                        </Link>
+                        </div>
                     )}
                 </div>
             </div>

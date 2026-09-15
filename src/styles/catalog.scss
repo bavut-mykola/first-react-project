@@ -257,9 +257,10 @@ button, h1, h2, h3, p, span {
         gap: 100px;
     }
     .product-box {
-        height: 240px;
-        width: 120% !important;
+        height: 250px;
+        width: 110% !important;
         box-sizing: border-box;
+        margin-left: -14px;
     }
     .product-image {
         width: 100%;

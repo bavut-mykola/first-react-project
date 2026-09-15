@@ -215,6 +215,7 @@
 }
 
 @media (max-width: 420px) {
+
   .products-page-container .catalog-title,
   .products-page-container .filter-box {
     margin: 0;
@@ -237,17 +238,18 @@
   }
 
   .products-container {
-    padding-bottom: 60px !important;
+    padding-bottom: 15px !important;
   }
 
   .product-box {
-      flex: 0 0 100% !important;
-      width: 100% !important;
-      height: 440px !important;
+    flex: 0 0 100% !important;
+    width: 100% !important;
+    height: 440px !important;
   }
 
   .image-container {
-    height: 140px;
+    height: 140px !important;
+    aspect-ratio: auto !important;
     flex-shrink: 0;
   }
 
@@ -255,10 +257,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-  } 
+  }
 
   .product-info {
-      align-items: flex-start !important; 
+    flex-grow: 0 !important;
+    align-items: flex-start !important;
+    margin-top: 20px;
   }
 
   .product-btn {
@@ -270,3 +274,60 @@
     margin-top: 15px !important;
   }
 }
+
+// @media (max-width: 420px) {
+//   .products-page-container .catalog-title,
+//   .products-page-container .filter-box {
+//     margin: 0;
+//   }
+
+//   .products-page-container .catalog-title {
+//     font-size: 1.5rem;
+//     padding-bottom: 15px;
+//   }
+
+//   .products-top {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center !important;
+//     padding-bottom: 25px;
+//   }
+
+//   #catalog {
+//     padding: 40px 16px !important;
+//   }
+
+//   .products-container {
+//     padding-bottom: 60px !important;
+//   }
+
+//   .product-box {
+//       flex: 0 0 100% !important;
+//       width: 100% !important;
+//       height: 440px !important;
+//   }
+
+//   .image-container {
+//     height: 140px;
+//     flex-shrink: 0;
+//   }
+
+//   .product-img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   } 
+
+//   .product-info {
+//       align-items: flex-start !important; 
+//   }
+
+//   .product-btn {
+//     margin-top: 10px !important;
+//     flex-shrink: 0 !important;
+//   }
+
+//   .arrows-box {
+//     margin-top: 15px !important;
+//   }
+// }

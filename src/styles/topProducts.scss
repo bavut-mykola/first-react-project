@@ -37,6 +37,7 @@
 
 .product-box {
   flex: 0 0 calc(50% - 20px);
+  height: 420px;
 
   color: $black;
 
@@ -50,27 +51,20 @@
 /* IMAGE */
 
 .image-container {
-  width: 100%;
-
+  width: 100%; 
   aspect-ratio: 4 / 3;
 
   overflow: hidden;
-
   border-radius: $radius-md;
-
   background-color: $surface;
 }
-
 
 .product-img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   transition: $transition;
 }
-
 
 .image-container:hover .product-img {
   transform: scale(1.05);
@@ -91,12 +85,14 @@
 .product-title {
   font-size: 1.25rem;
   font-weight: 600;
+  cursor: text;
 }
 
 
 .product-price {
   font-size: 1.1rem;
   font-weight: 500;
+  cursor: text;
 }
 
 
@@ -235,6 +231,7 @@
   .product-box {
       flex: 0 0 100% !important;
       width: 100% !important;
+      height: 280px !important;
       height: auto;
   }
 

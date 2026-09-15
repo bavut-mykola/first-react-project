@@ -237,7 +237,12 @@ button, h1, h2, h3, p, span {
         padding-bottom: 15px;
     }
     .filter-title {
-        font-size: 14px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: .3s ease;
+        &:hover {
+            color: rgb(53, 53, 53);
+        }
     }
     .filter-spans span {
         font-size: 12px;

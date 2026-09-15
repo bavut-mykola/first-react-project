@@ -591,6 +591,25 @@
   display: none !important;
 }
 
+.main-buttons-box.special-page {
+  padding-top: 30px;
+  top: 76px;
+}
+.input-box-wrapper.special-page {
+  top: 178px;
+}
+.dropdown-main.special-page {
+  top: 218px;
+}
+
+.input-box-wrapper.special-page.searched-mobile {
+  top: 76px;
+}
+
+.dropdown-main.special-page.searched-mobile {
+  top: 116px;
+}
+
 .catalog-loading {
   display: flex;
   flex-direction: column;

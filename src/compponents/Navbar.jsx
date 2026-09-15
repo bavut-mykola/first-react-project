@@ -136,8 +136,12 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
                 </nav>
             )}
 
-            <div className={
-                `main-buttons-box ${isBurgerClicked ? 'opened' : ''} ${isMobileScreen && isSearched ? 'hidden-search' : ''}`
+            <div className={`
+                main-buttons-box
+                ${isBurgerClicked ? 'opened' : ''}
+                ${isMobileScreen && isSearched ? 'hidden-search' : ''}
+                ${location.pathname === '/catalog' ? 'special-page' : ''}
+            `
             }>
                 {!isHidden && (location.pathname === '/' || location.pathname === '/catalog') && (
                     <button className="search-open-btn"
@@ -213,7 +217,7 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
                 )
                 )}
             </div>
-            {location.pathname === '/' && (
+            {location.pathname === '/' || location.pathname === '/catalog' && (
             <div className="burger-button-box">
                 <button 
                  className={`burger ${isBurgerClicked ? 'open' : ''}`}
@@ -229,7 +233,12 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
 
         {(location.pathname === '/' || location.pathname === '/catalog') && (
             <>
-            <div className={`input-box-wrapper ${isSearchOpened ? 'opened' : 'closed'} ${isMobileScreen && isSearched ? 'searched-mobile' : ''}`}
+            <div className={`
+                input-box-wrapper
+                ${isSearchOpened ? 'opened' : 'closed'}
+                ${isMobileScreen && isSearched ? 'searched-mobile' : ''}
+                ${location.pathname === '/catalog' ? 'special-page' : ''}
+            `}
             ref={inputWrapperRef} >
                 <div className="dropdown-input-box">
                     <label className={search.length > 0 ? "hidden-label" : ""}
@@ -258,9 +267,15 @@ function Navbar({ user, onLogout, cart, products, addToCart }) {
                 </div>
             </div>
 
-            <div ref={dropDownRef}
-            className={`dropdown-main ${!isSearched ? 'main-close' : 'main-open'} ${isMobileScreen && isSearched ? 'searched-mobile' : ''}`}
-            > 
+            <div
+                ref={dropDownRef}
+                className={`
+                    dropdown-main
+                    ${!isSearched ? 'main-close' : 'main-open'}
+                    ${isMobileScreen && isSearched ? 'searched-mobile' : ''}
+                    ${location.pathname === '/catalog' ? 'special-page' : ''}
+                `}
+            >
 
                 <div className="dropdown-search">
                     <div className="search-top">
